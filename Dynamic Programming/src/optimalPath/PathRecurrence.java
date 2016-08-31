@@ -24,15 +24,15 @@ public class PathRecurrence {
 	}
 	
 	public int[][] findGold(int i, int j){
-		if (i==1){
-			if (j==1){
+		if (i==0){
+			if (j==0){
 				optimal[0][0] = goldMap[0][0];
 				return optimal;
 			}else{
 				findGold(i, j-1);
 				optimal[i][j] = optimal[i][j-1] + goldMap[i][j];
 			}			
-		}else if (j==1){
+		}else if (j==0){
 			findGold(i-1,j);
 			optimal[i][j] = optimal[i-1][j] + goldMap[i][j];
 		}else{
