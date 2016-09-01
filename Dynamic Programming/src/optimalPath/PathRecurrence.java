@@ -17,7 +17,11 @@ public class PathRecurrence {
 	}
 	
 	public void renew(int goldMatrix[][]){
-		goldMap = goldMatrix.clone();
+		for (int i=0; i<goldMatrix.length; i++){
+			for (int j=0; j<goldMatrix[0].length; j++){
+				goldMap[i][j] = goldMatrix[i][j];
+			}
+		}
 		int row = goldMatrix.length;
 		int column = goldMatrix[1].length;
 		optimal = new int[row][column];
