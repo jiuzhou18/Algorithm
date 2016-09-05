@@ -19,6 +19,10 @@ public class MatchingReversalIterately {
 		System.arraycopy(origin, 0, this.origin, 0, origin.length); 
 	}
 	
+	public String splitWhole(){
+		return splitString(origin.length-1);
+	}
+	
 	public String splitString(int k){
 		String optimal = "";
 		if (k==0)
@@ -38,9 +42,9 @@ public class MatchingReversalIterately {
 					}
 					if (judge==true){
 						if (a==0)
-							return new String(origin,0,k-1);
+							return new String(origin,0,k+1);
 						else{
-							String optimal2 = splitString(a-1) +" "+new String(origin,a,k);
+							String optimal2 = splitString(a-1) +" "+new String(origin,a,k-a+1);
 							if (optimal2.split(" ").length < optimal.split(" ").length)
 								optimal = optimal2;
 							
