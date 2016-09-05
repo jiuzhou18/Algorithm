@@ -50,7 +50,7 @@ public class OperatingPathing {
 			}
 			System.out.println();
 		}
-		
+		in.close();
 	}
 
 }
